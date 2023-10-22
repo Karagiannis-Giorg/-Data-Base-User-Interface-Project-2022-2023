@@ -150,3 +150,28 @@ CREATE TABLE log(
      changes VARCHAR(200),
      time timestamp
      )engine=InnoDB;
+
+CREATE TABLE offers(
+   offer_id INT(5) NOT NULL,
+   offer_starts DATE NOT NULL,
+   offer_ends DATE NOT NULL,
+   offer_cost FLOAT(8,3) NOT NULL,
+   offer_dst_id INT(11) NOT NULL,
+   PRIMARY KEY (offer_id),
+   CONSTRAINT DSTOFFER
+   FOREIGN KEY (offer_dst_id) REFERENCES destination(dst_id)
+   ON UPDATE CASCADE ON DELETE CASCADE
+ )engine=InnoDB;
+ 
+ 
+CREATE TABLE reservation_offers(
+   res_offers_id INT(5) NOT NULL AUTO_INCREMENT,
+   res_offers_name VARCHAR(20) DEFAULT 'unknown' NOT NULL,
+   res_offers_lname VARCHAR(20) DEFAULT 'unknown' NOT NULL,
+   offers_res_offer_id INT(5) NOT NULL,
+   res_advance_payment FLOAT(7,2) NOT NULL,
+   PRIMARY KEY (res_offers_id),
+   CONSTRAINT OFFERRES
+   FOREIGN KEY (offers_res_offer_id) REFERENCES offers(offer_id)
+   ON UPDATE CASCADE ON DELETE CASCADE
+ )engine=InnoDB;
