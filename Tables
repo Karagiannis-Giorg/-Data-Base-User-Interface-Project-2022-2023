@@ -143,3 +143,10 @@ CREATE TABLE branch(
       (IT_AT) REFERENCES worker(wrk_AT)
       ON UPDATE CASCADE ON DELETE CASCADE
       )engine=InnoDB;
+
+CREATE TABLE log(
+     user VARCHAR(50),
+     action VARCHAR(10),
+     changes VARCHAR(200),
+     time timestamp
+     )engine=InnoDB;
