@@ -1,1 +1,1 @@
-# -Data-structure-Algorithms-project-2021-2022
+In this project our task was to create a database in mySQL to store information about a travel agency, and then develop a user-friendly interface to access and modify that information. We used NetBeans, a popular Java-based development platform, to create the interface, which allowed us to easily view and manage the data stored in the database. Our goal was to create a system that was efficient, reliable, and easy to use, to help the travel agency streamline its operations and provide better service to its customers.
